@@ -21,6 +21,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 from PIL import Image
+from io import BytesIO
 from dotenv import load_dotenv
 from deployment_bootstrap import ensure_assets
 from public_api_guard import RequestDenied, live_ai_enabled, reserve_request
@@ -40,7 +41,9 @@ MUTED = "#5B5F6E"
 
 st.set_page_config(
     page_title="Financial Intelligence | Project 05",
-    page_icon=Image.open(ROOT / "app" / "portfolio_favicon.png"),
+    page_icon=Image.open(BytesIO(bytes.fromhex(
+            "89504e470d0a1a0a0000000d4948445200000040000000400203000000d707994d0000000c504c54450a0f2efdfdfd8c8e9d707384897480680000000474524e53ffffffff6d284679000000644944415478da636018d18011896daac0f07f0d1392c0070606060626742d0324c0c2c0c0c0c0e9c3f07f0d2566883a30303030c028321df67a0303030303c3eb0370157f90028c8189818181671084183e010358988a7a400244941433a0befbc2300a0008ff0cd977d4d3fa0000000049454e44ae426082"
+        ))),
     layout="wide",
     initial_sidebar_state="collapsed",
 )
