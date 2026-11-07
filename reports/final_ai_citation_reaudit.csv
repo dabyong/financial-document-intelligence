@@ -1,0 +1,11 @@
+﻿case_id,original_check,reaudit_status,cited_ids,unknown_ids,source_count,note
+A01,PASSED,PASSED,"M2, M3, D3, D4, D2, D8",,13,Valid IDs do not independently prove source support.
+A02,PASSED,PASSED,"M1, M2, M3, M4, M5, M6",,16,Valid IDs do not independently prove source support.
+A03,PASSED,PASSED,"M2, M3",,13,Valid IDs do not independently prove source support.
+A04,PASSED,PASSED,"D3, D2",,12,Valid IDs do not independently prove source support.
+A05,PASSED,PASSED,"M4, M2",,14,Valid IDs do not independently prove source support.
+A06,PASSED,PASSED,"M1, M2, D1, D10, D7, D3, D4, D8",,12,Valid IDs do not independently prove source support.
+A07,PASSED,PASSED,"D6, D1, D3, D9, D2",,12,Valid IDs do not independently prove source support.
+A08,PASSED,PASSED,"D2, D5, D7, D1, D3, D6, M1",,11,Valid IDs do not independently prove source support.
+A09,PASSED,PASSED,"M2, M4",,14,Valid IDs do not independently prove source support.
+A10,FAILED: Model response contained no recognized evidence citations. Treat answer as unverified.,PASSED,"D1, D3, D5, D7, M1, M2",,12,Valid IDs do not independently prove source support.

@@ -1,0 +1,41 @@
+﻿# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Raw and generated data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/warehouse/*
+!data/warehouse/.gitkeep
+data/vectorstore/*
+!data/vectorstore/.gitkeep
+
+# Databases and logs
+*.duckdb
+*.duckdb.wal
+*.log
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+data/runtime/
+
+_step*_update/
+
+*.pyc
+
+/project5_step10b_security_bundle.zip

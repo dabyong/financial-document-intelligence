@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "archive": "financial_assets.zip",
+  "archive_sha256": "2182b59415927d945d0a215c00536ccb7307fa7ad4eca7851bfec5f6f5722efc",
+  "archive_bytes": 19080258,
+  "file_count": 7,
+  "kpi_company_year_rows": 6,
+  "chroma_collection": "sec_10k_minilm_v1",
+  "chroma_chunks": 3284,
+  "source": "Public SEC EDGAR FY2023-FY2025 Alphabet and Meta filings; generated local assets"
+}

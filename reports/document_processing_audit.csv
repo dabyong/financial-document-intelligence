@@ -1,0 +1,7 @@
+company,fiscal_year,parser,text_characters,word_count,chunk_count,section_mentions,checksum_verified,status
+alphabet,2023,xml,340571,52668,141,Item 1A; Item 7; Item 8,True,PASS
+alphabet,2024,xml,350760,54159,145,Item 1A; Item 7; Item 8,True,PASS
+alphabet,2025,xml,344469,53080,142,Item 1A; Item 7; Item 8,True,PASS
+meta,2023,xml,487747,76094,203,Item 1A; Item 7; Item 8,True,PASS
+meta,2024,xml,500231,77669,207,Item 1A; Item 7; Item 8,True,PASS
+meta,2025,xml,516028,80216,214,Item 1A; Item 7; Item 8,True,PASS

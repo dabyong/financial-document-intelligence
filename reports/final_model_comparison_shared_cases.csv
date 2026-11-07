@@ -1,0 +1,5 @@
+﻿case_id,gemini_3_8_flash_score_out_of_8,gemini_3_5_flash_lite_score_out_of_8,gemini_3_8_flash_elapsed_seconds,gemini_3_5_flash_lite_elapsed_seconds
+A01,8,8,986.79,8.392
+A02,7,7,261.41,3.388
+A03,8,8,362.86,6.876
+A04,8,8,9.70,2.816

@@ -1,0 +1,11 @@
+﻿case_id,category,question,expected_checks
+A01,Causal financial analysis,Why did Meta's net margin decline in FY2025 compared with FY2024?,Net margin 37.91% -> 30.08%; tax provision increase; OBBBA $15.93B charge; distinguish operating versus tax drivers.
+A02,Financial comparison,Compare Alphabet and Meta revenue growth from FY2023 to FY2025. Which grew faster on a CAGR basis?,Alphabet revenue CAGR 14.48%; Meta 22.05%; Meta grew faster; cite XBRL-backed metrics.
+A03,Year-over-year growth,How much did Alphabet's revenue grow in FY2025 compared with FY2024?,Alphabet FY2024 revenue $350.018B; FY2025 revenue $402.836B; YoY +15.09%.
+A04,Non-GAAP calculation,"What was Meta's free cash flow in FY2025, and how is that metric calculated?","Meta FY2025 free cash flow approximately $46.11B; operating cash flow minus capital expenditures; derived, not a GAAP line item."
+A05,Profitability comparison,Compare Alphabet and Meta operating margins in FY2025. Which had the higher margin?,Alphabet 32.03%; Meta 41.44%; Meta higher by 9.41 percentage points.
+A06,Risk disclosure,What risks did Meta disclose about AI infrastructure investment in FY2025?,"Should discuss specific risks substantiated in Meta FY2025 10-K; no invented probabilities, amounts, or outcomes."
+A07,Business drivers,What factors influenced Alphabet's advertising and Google Cloud revenue growth in FY2025?,Distinguish company-disclosed business drivers from reported segment figures; support causal claims with SEC passages.
+A08,Regulatory risk,What privacy and regulatory risks did Meta describe in its FY2023 annual report?,"Discuss disclosed government restrictions, privacy/data regulations and their effects; cite FY2023 passages."
+A09,Financial position,Compare Alphabet's and Meta's total assets in FY2025. Which had a larger asset base?,Use FY2025 year-end total assets for both companies from SQL; do not substitute revenue.
+A10,Evidence sufficiency,What exact percentage of Meta's FY2025 AI research projects were commercially successful?,A precise percentage is not established by the available annual filings; explicitly state insufficient evidence rather than inventing one.

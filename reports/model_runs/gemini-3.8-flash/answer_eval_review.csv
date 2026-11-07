@@ -1,0 +1,66 @@
+﻿case_id,category,question,retrieval_mode,model,citation_id_check,latency_seconds,answer_text,source_ids,numerical_accuracy_0_to_2,citation_support_0_to_2,completeness_0_to_2,uncertainty_handling_0_to_2,review_notes
+A01,Causal financial analysis,Why did Meta's net margin decline in FY2025 compared with FY2024?,multi,gemini-3.8-flash,PASSED,986.79,"Meta's net margin declined from **37.91%** in FY2024 to **30.08%** in FY2025 [M2, M3]. 
+
+The primary driver of this decline was a sharp increase in income tax expense, along with a slight decline in operating margin:
+
+1. **Substantial Increase in Provision for Income Taxes (OBBBA Impact)**:
+   * Meta's provision for income taxes increased by $17.17 billion (or 207%) in FY2025 compared to FY2024, primarily due to an increased effective tax rate driven by the effects of the OBBBA legislation [D4].
+   * Specifically, Meta recorded a **$15.93 billion charge** in the third quarter of 2025 related to OBBBA provisions, of which **$14.03 billion** was a valuation allowance against U.S. federal deferred tax assets due to the Corporate Alternative Minimum Tax (CAMT) limitations, with the remainder mostly related to the reduced benefit of the foreign-derived intangible income deduction [D3]. 
+   * As a result, despite income before provision for income taxes increasing from $70.663 billion in FY2024 to $85.932 billion in FY2025 [D5], net income fell from $62.360 billion [M2] to $60.458 billion [M3].
+
+2. **Operating Margin Contraction**:
+   * Meta's operating margin declined modestly from **42.18%** in FY2024 to **41.44%** in FY2025 [M2, M3]. 
+   * Operating expenses grew faster than revenue in certain areas; notably, research and development expenses rose by 31% from $43.873 billion (27% of revenue) in FY2024 to $57.372 billion (29% of revenue) in FY2025 [D2, D8]. Total costs and expenses increased from $95.121 billion to $117.690 billion [D2].","M1, M2, M3, D1, D2, D3, D4, D5, D6, D7, D8, D9, D10",2,2,2,2,"Verified 37.91% to 30.08% net-margin decline, $17.17B income-tax provision increase, $15.93B OBBBA charge ($14.03B allowance), pre-tax income, and R&D increase. Cited D3/D4/D5/D8 contain the relevant facts; M2/M3 align with the validated SQL data. Distinguishes principal tax cause from modest operating-margin contraction."
+A02,Financial comparison,Compare Alphabet and Meta revenue growth from FY2023 to FY2025. Which grew faster on a CAGR basis?,multi,gemini-3.8-flash,PASSED,261.41,"### Revenue Growth Comparison: Alphabet vs. Meta (FY2023 to FY2025)
+
+#### 1. Alphabet Revenue Growth
+* **FY2023 Revenue:** $307.394 billion [M1]
+* **FY2024 Revenue:** $350.018 billion (YoY growth: 13.87%) [M2]
+* **FY2025 Revenue:** $402.836 billion (YoY growth: 15.09%) [M3]
+* **FY2023 to FY2025 Revenue CAGR:** **14.48%** [M3]
+
+*(Note: Alphabet's revenue increase from FY2023 to FY2024 was driven in part by growth in Google Search & other ad formats, user adoption, mobile usage, and advertiser spending [D4], while FY2025 revenue reached $402.836 billion [M3].)*
+
+---
+
+#### 2. Meta Revenue Growth
+* **FY2023 Revenue:** $134.902 billion [M4]
+* **FY2024 Revenue:** $164.501 billion (YoY growth: 21.94%) [M5]
+* **FY2025 Revenue:** $200.966 billion (YoY growth: 22.17%) [M6]
+* **FY2023 to FY2025 Revenue CAGR:** **22.05%** [M6]
+
+*(Note: Meta's revenue growth from FY2023 to FY2024 was primarily driven by advertising revenue within the Family of Apps segment [D7].)*
+
+---
+
+### Conclusion
+**Meta grew faster** on a compound annual growth rate (CAGR) basis from FY2023 to FY2025, delivering a revenue CAGR of **22.05%** [M6], compared to Alphabet’s revenue CAGR of **14.48%** [M3].","M1, M2, M3, M4, M5, M6, D1, D2, D3, D4, D5, D6, D7, D8, D9, D10",2,1,2,2,"CAGR figures and 2023–2025 revenues recalculate correctly (Alphabet 14.48%, Meta 22.05%). Filings D4/D7 support contextual revenue drivers. Minor citation-provenance issue: CAGR is a derived two-endpoint calculation, but the answer cites only the ending-year metric [M3]/[M6] at the CAGR claims; cite [M1,M3] and [M4,M6], or cite a dedicated SQL CAGR calculation."
+A03,Year-over-year growth,How much did Alphabet's revenue grow in FY2025 compared with FY2024?,multi,gemini-3.8-flash,PASSED,362.86,"In FY2025, Alphabet's revenue grew by **15.09%** year-over-year compared with FY2024 [M3]. 
+
+* **FY2024 Revenue:** $350.018 billion [M2]
+* **FY2025 Revenue:** $402.836 billion [M3]
+
+This represents an absolute dollar increase of **$52.818 billion** ($402.836 billion − $350.018 billion) [M2, M3].","M1, M2, M3, D1, D2, D3, D4, D5, D6, D7, D8, D9, D10",2,2,2,2,"FY2024 and FY2025 revenue match validated Alphabet metrics. $402.836B − $350.018B = $52.818B, equal to 15.09% year-over-year growth. Both financial years are explicitly cited; answers the quantitative question directly without extra unsupported claims."
+A04,Non-GAAP calculation,"What was Meta's free cash flow in FY2025, and how is that metric calculated?",multi,gemini-3.8-flash,PASSED,9.70,"Free cash flow (FCF) is not a separately reported GAAP line item, but rather an analyst calculation and a non-GAAP financial measure reported by companies [D2, D5]. Depending on the definition used, Meta's FY2025 free cash flow is calculated as follows:
+
+---
+
+### 1. Standard Analyst Calculation (Operating Cash Flow minus Capex)
+* **FY2025 Free Cash Flow:** **$46.109 billion** [M2]
+* **Calculation:**
+  $$\text{Free Cash Flow} = \text{Operating Cash Flow} - \text{Capital Expenditures}$$
+  * **Operating Cash Flow (Net cash provided by operating activities):** $115.800 billion [M2]
+  * **Capital Expenditures (Purchases of property and equipment):** $69.691 billion [M2]
+  * **Calculation:** $\$115.800\text{B} - \$69.691\text{B} = \$46.109\text{B}$ [M2]
+
+---
+
+### 2. Meta's Reported Non-GAAP Free Cash Flow Definition
+In its SEC filings, Meta defines free cash flow as net cash provided by operating activities reduced by purchases of property and equipment *and* principal payments on finance leases [D2, D3].
+
+* **FY2025 Free Cash Flow (Meta's Definition):** **$43.585 billion** [D3]
+* **Calculation Reconciliation:**
+  * **Net cash provided by operating activities:** $115,800 million [D3]
+  * **Purchases of property and equipment:** $(69,691) million [D3]
+  * **Principal payments on finance leases:** $(2,524) million [D3]
+  * **Total Free Cash Flow:** $\$115,800\text{M} - \$69,691\text{M} - \$2,524\text{M} = \$43,585\text{ million}$ ($43.585 billion) [D3]","M1, M2, D1, D2, D3, D4, D5, D6, D7, D8, D9, D10",2,2,2,2,"Accurately distinguishes the project's simplified analyst FCF calculation of $46.109B (CFO minus PP&E purchases) from Meta's own reported non-GAAP FCF of $43.585B, which also subtracts $2.524B finance-lease principal. D2 supplies Meta's definition and D3 the official reconciliation. Prefer labeling $43.585B 'Meta-reported FCF' prominently in the UI to avoid confusion."

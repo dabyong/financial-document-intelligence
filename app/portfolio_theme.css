@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+:root {
+  --p5-navy-950: #05081c;
+  --p5-navy-900: #0a0f2e;
+  --p5-navy-800: #121a45;
+  --p5-bg: #FAF9FE;
+  --p5-ink: #0f111a;
+  --p5-muted: #5b5f6e;
+  --p5-line: #d9dbe3;
+  --p5-mint: #2fd18f;
+  --p5-green-ink: #0a3d29;
+  --p5-display: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+  --p5-body: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+}
+/* Scope monospace to text surfaces. Never set the font on [class*="st-"]:
+   this overrides the Material Symbols ligatures used by native Streamlit icons. */
+html, body, [data-testid="stAppViewContainer"], .stApp { background: var(--p5-bg) !important; color: var(--p5-ink); font-family: var(--p5-body); }
+[data-testid="stMarkdownContainer"], [data-testid="stMetric"], [data-testid="stCaptionContainer"], input, textarea { font-family: var(--p5-body); }
+/* Restore the proper font for Material Symbols and keep arrow/expander icons intact. */
+[data-testid="stIconMaterial"], [data-testid="stIconMaterial"] *,
+.material-symbols-rounded, .material-symbols-outlined, .material-icons {
+  font-family: 'Material Symbols Rounded' !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  font-variant: normal !important;
+  -webkit-font-feature-settings: 'liga' !important;
+  font-feature-settings: 'liga' !important;
+  white-space: nowrap;
+  line-height: 1 !important;
+}
+[data-testid="stHeader"] { background: var(--p5-navy-900) !important; }
+[data-testid="stHeader"] button, [data-testid="stHeader"] svg { color: #fff !important; }
+[data-testid="stDecoration"] { background: var(--p5-mint); }
+.block-container { max-width: 1320px !important; padding-top: 1.1rem !important; padding-bottom: 4rem !important; }
+[data-testid="stSidebar"] { background: var(--p5-navy-900); }
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"],
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] { color: #F6F7FC; }
+[data-testid="stSidebar"] p { color: #D8DBEA; }
+[data-testid="stSidebar"] a { color: #79F0BE !important; }
+[data-testid="stSidebar"] hr { border-color: #343B61; }
+[data-testid="stSidebar"] [data-testid="stIconMaterial"] { color: #F6F7FC; }
+.side-kicker { font: 700 .74rem var(--p5-display); color: #78F0BE; letter-spacing:.14em; }
+h1, h2, h3, h4, [data-testid="stMetricLabel"], [data-testid="stMetricValue"] { font-family: var(--p5-display) !important; }
+/* Project 4-style top brandbar and terminal hero */
+.p5-brandbar {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 1rem; padding: 1.15rem 1.35rem; margin-bottom: 2.2rem;
+  background: var(--p5-navy-900); border: 1px solid var(--p5-navy-950);
+  color: #fff; font-family: var(--p5-display);
+}
+.p5-brand { font-size: 1rem; font-weight: 800; letter-spacing: .025em; overflow-wrap: anywhere; }
+.p5-brand a { color: #fff !important; text-decoration: none; }
+.p5-brand a:hover { color: var(--p5-mint) !important; }
+.p5-subbrand { color: #b7bbd6; font-size: .72rem; }
+.p5-hero { margin-bottom: 1.35rem; }
+.p5-eyebrow { color: var(--p5-muted); font: 500 .78rem var(--p5-display); letter-spacing: .055em; margin-bottom: .8rem; overflow-wrap: anywhere; }
+.p5-prompt { color: #0a9467; font-weight: 800; }
+.p5-hero h1 {
+  color: var(--p5-ink); font-family: var(--p5-display) !important;
+  font-size: clamp(1.5rem, 3.1vw, 2.75rem); line-height: 1.22;
+  letter-spacing: -.035em; font-weight: 800; margin: 0 0 .8rem;
+  overflow-wrap: anywhere;
+}
+.p5-hero h1 span { color: var(--p5-green-ink); }
+.p5-hero p { max-width: 78ch; color: var(--p5-muted); font-size: .85rem; line-height: 1.75; margin: 0; }
+.p5-statusline { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.p5-chip { border: 1px solid var(--p5-line); background: #fff; color: var(--p5-muted); padding: .33rem .62rem; font: 600 .68rem var(--p5-display); }
+.p5-chip-accent { background: #e9fbf2; color: #095138; border-color: #a8ebd0; }
+.p5-note {
+  background: #fff8e4; color: #664b10; border: 1px solid #e5d5a8;
+  border-left: 3px solid #c79b2f; padding: .8rem 1.05rem;
+  font-size: .78rem; line-height: 1.65; margin: .5rem 0 1.4rem;
+}
+/* Portfolio-inspired metrics, tabs and forms */
+[data-testid="stMetric"] { background: #fff; border: 1px solid var(--p5-line); border-top: 3px solid var(--p5-navy-900); border-radius: 2px; padding: 1rem 1.1rem; min-height: 112px; }
+[data-testid="stMetricLabel"] { color: var(--p5-muted) !important; font-size: .75rem !important; }
+[data-testid="stMetricValue"] { color: var(--p5-navy-900) !important; font-size: clamp(1.35rem, 2vw, 2rem) !important; font-weight: 800 !important; }
+[data-testid="stTabs"] [data-baseweb="tab-list"] { gap: .25rem; border-bottom: 1px solid var(--p5-line); }
+[data-testid="stTabs"] [data-baseweb="tab"] { font: 600 .78rem var(--p5-display); color: var(--p5-muted); padding: .85rem 1.05rem; border-radius: 0; }
+[data-testid="stTabs"] [data-baseweb="tab"][aria-selected="true"] { color: var(--p5-navy-900); background: #ebfbf4; }
+[data-testid="stTabs"] [data-baseweb="tab-highlight"] { background: var(--p5-mint); height: 3px; }
+[data-testid="stDataFrame"], [data-testid="stForm"] { background: #fff; border: 1px solid var(--p5-line); border-radius: 2px; }
+[data-testid="stExpander"] { border-radius: 2px; border-color: var(--p5-line); }
+/* Avoid overriding expander icon, or forcing all descendants into monospace. */
+[data-testid="stExpander"] summary { display: flex; align-items: center; gap: .55rem; min-height: 2.7rem; }
+.stButton button, .stDownloadButton button, [data-testid="stFormSubmitButton"] button {
+  border: 1px solid var(--p5-navy-900) !important; border-radius: 2px !important;
+  font-family: var(--p5-display) !important; font-weight: 700 !important;
+}
+.stButton button[kind="primary"], .stDownloadButton button,
+[data-testid="stFormSubmitButton"] button[kind="primary"] { background: var(--p5-navy-900) !important; color: #fff !important; }
+.stButton button[kind="primary"]:hover, .stDownloadButton button:hover,
+[data-testid="stFormSubmitButton"] button[kind="primary"]:hover { background: var(--p5-navy-800) !important; color:#fff !important; }
+[data-testid="stSelectbox"] > div > div { border-radius: 2px; }
+[data-testid="stCaptionContainer"] { color: var(--p5-muted) !important; }
+.p5-footer { border-top: 1px solid var(--p5-line); color: var(--p5-muted); padding-top: 1.25rem; margin-top: 2.8rem; font: 500 .7rem var(--p5-display); }
+a { text-underline-offset: 3px; }
+@media (max-width: 760px) {
+  .block-container { padding: 1rem .9rem 2.2rem !important; }
+  .p5-brandbar { padding: .9rem 1rem; margin-bottom: 1.5rem; }
+  .p5-brand { font-size: .78rem; }
+  .p5-subbrand { font-size: .62rem; }
+  .p5-hero h1 { font-size: 1.48rem; }
+  .p5-hero p { font-size: .78rem; }
+  [data-testid="stMetric"] { min-height: 98px; padding: .75rem .65rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* Build 9C: fail-safe rendering for built-in Streamlit Material ligature icons. */
+.p5-buildstamp {
+  display: inline-block; font-size: .62rem; font-weight: 800; color: #05081c;
+  background: #2fd18f; padding: .26rem .48rem; margin-left: .7rem;
+  vertical-align: middle; letter-spacing: .06em; white-space: nowrap;
+}
+[data-testid="stExpander"] summary { min-height: 3.1rem !important; padding: .7rem 1rem !important; gap: .65rem !important; }
+[data-testid="stExpander"] summary > div { min-width: 0; }
+[data-testid="stExpander"] summary p { overflow-wrap: anywhere; margin: 0; line-height: 1.55; }
+/* Even when the Material Symbols font is unavailable, native expander labels
+   should not be obscured by the raw ligature text of its expand arrow. */
+[data-testid="stExpander"] summary [data-testid="stIconMaterial"] {
+  font-size: 0 !important; display: inline-flex !important; align-items: center;
+  justify-content: center; min-width: 1.15rem; flex: 0 0 1.15rem;
+  overflow: hidden;
+}
+[data-testid="stExpander"] summary [data-testid="stIconMaterial"]::after {
+  content: "▸"; font-family: system-ui, sans-serif !important; font-size: 1.05rem !important;
+  color: #0a0f2e; line-height: 1;
+}
+[data-testid="stExpander"] details[open] summary [data-testid="stIconMaterial"]::after { content: "▾"; }
+@media (max-width: 760px) {
+  .p5-buildstamp { margin-left: 0; margin-top: .3rem; }
+}
