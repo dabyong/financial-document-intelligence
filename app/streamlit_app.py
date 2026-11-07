@@ -1,4 +1,4 @@
-"""Project 5 — AI Financial Document Intelligence (Build 9C verified UI).
+"""Project 5 — AI Financial Document Intelligence (Streamlit portfolio demo).
 
 Run from repository root:
     python -m streamlit run app/streamlit_app.py
@@ -39,7 +39,7 @@ MUTED = "#5B5F6E"
 
 st.set_page_config(
     page_title="Financial Intelligence | Project 05",
-    page_icon="📈",
+    page_icon=str(ROOT / "app" / "portfolio_favicon.png"),
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -216,18 +216,8 @@ def ask_financial_ai(question: str, model: str) -> dict:
     }
 
 
-st.sidebar.markdown("<div class='side-kicker'>DATA ANALYTICS / AI</div>", unsafe_allow_html=True)
-st.sidebar.markdown("### FINANCIAL INTELLIGENCE")
-st.sidebar.caption("SEC EDGAR • Alphabet + Meta • FY2023–FY2025")
-st.sidebar.divider()
-st.sidebar.markdown("**DATA STATUS**")
-st.sidebar.caption(f"Warehouse: {'Available' if DB_PATH.is_file() else 'Missing'}")
-st.sidebar.caption(f"Vector index: {'Available' if CHROMA_PATH.is_dir() else 'Missing'}")
-st.sidebar.caption(f"Gemini key: {'Configured' if os.getenv('GEMINI_API_KEY') else 'Missing'}")
-st.sidebar.divider()
-st.sidebar.markdown("[← Back to portfolio](https://allandavecabanlong.vercel.app/)")
-st.sidebar.caption("Research demonstration · Not investment advice")
-st.sidebar.caption("UI BUILD: 9C | app/streamlit_app.py")
+# Deployment status is available in the Sources & methodology tab. The native
+# Streamlit sidebar is not used so the app can have one clear branded header.
 
 def show_portfolio_header() -> None:
     """Project 04-style header, with static, trusted HTML only."""
@@ -236,7 +226,10 @@ def show_portfolio_header() -> None:
       <div class="p5-brand">
         <a href="https://allandavecabanlong.vercel.app/" target="_blank" rel="noopener noreferrer">ALLAN_DAVE_CABANLONG</a>
       </div>
-      <div class="p5-subbrand">PROJECT_05 // DATA_ANALYST + AI_FOCUS <span class="p5-buildstamp">UI_BUILD_9C</span></div>
+      <div class="p5-header-actions">
+        <span class="p5-subbrand">PROJECT_05 // DATA_ANALYST + AI_FOCUS</span>
+        <a class="p5-portfolio-return" href="https://allandavecabanlong.vercel.app/" aria-label="Return to portfolio">← Return to Portfolio</a>
+      </div>
     </div>
     <div class="p5-hero">
       <div class="p5-eyebrow"><span class="p5-prompt">&gt;</span> ./projects/05_financial_document_intelligence</div>
@@ -398,6 +391,11 @@ with page_ai:
 
 with page_sources:
     st.subheader("Data provenance & methodology")
+    with st.expander("Deployment status", expanded=False):
+        st.caption(f"Warehouse: {'Available' if DB_PATH.is_file() else 'Missing'}")
+        st.caption(f"Vector index: {'Available' if CHROMA_PATH.is_dir() else 'Missing'}")
+        st.caption(f"Gemini key: {'Configured' if os.getenv('GEMINI_API_KEY') else 'Missing'}")
+        st.caption("Research demonstration · Not investment advice")
     st.markdown("**Primary source:** SEC EDGAR 10-K filings for Alphabet and Meta, FY2023–FY2025.")
     st.markdown("**Structured metrics:** US-GAAP facts extracted from the SEC Company Facts API, validated and stored in DuckDB.")
     st.markdown("**Unstructured search:** SEC filings processed into chunks and indexed in ChromaDB using local MiniLM embeddings.")
