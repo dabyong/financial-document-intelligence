@@ -20,6 +20,7 @@ from pathlib import Path
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+from PIL import Image
 from dotenv import load_dotenv
 from deployment_bootstrap import ensure_assets
 from public_api_guard import RequestDenied, live_ai_enabled, reserve_request
@@ -39,7 +40,7 @@ MUTED = "#5B5F6E"
 
 st.set_page_config(
     page_title="Financial Intelligence | Project 05",
-    page_icon=str(ROOT / "app" / "portfolio_favicon.png"),
+    page_icon=Image.open(ROOT / "app" / "portfolio_favicon.png"),
     layout="wide",
     initial_sidebar_state="collapsed",
 )
